@@ -1,19 +1,23 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
-
 {% block content %}
- 
 
-<div class="container is-max-desktop" style="margin: 15%; background-color: rgb(244, 244, 209);">
-<form action="" method="post">
-    <h1>Login Page</h1>
+<section class="container section is-large is-center">
+<div class="container" id="form-area" >
+    <h1 class="title is-center">Login Page</h1>
+<div class="section "  >
+<form action="" method="post"  >
+   
     <div class="field">
         {% csrf_token %}
         {{form|crispy}}
-        <button class="button is-primary" type="submit" class="">Login</button>
-
+       <div >
+        <button class="button is-primary is-medium is-pulled-right  " type="submit" class="">Login</button>
+        </div>
      </div>
 </form>
 </div>
+</div>
+</section>
 {% endblock %}
