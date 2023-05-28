@@ -1,6 +1,20 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
+from django.contrib import messages
+
+### Messages ####
+# # Change the messages level to ensure the debug message is added.
+# messages.set_level(request, messages.DEBUG)
+# messages.debug(request, "Test message...")
+
+# # In another request, record only messages with a level of WARNING and higher
+# messages.set_level(request, messages.WARNING)
+# messages.success(request, "Your profile was updated.")  # ignored
+# messages.warning(request, "Your account is about to expire.")  # recorded
+
+
+
 
 def home(request):
     return render(request, 'home.html')
@@ -21,6 +35,8 @@ def register(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             user = form.save()
+            messages.success(request, "Thanks for registrations. Now you can login the page.")
+            # return render(request, 'login.html')
     else:
         form = RegisterForm()
     return render(request, 'registration/register.html', {"form": form } )

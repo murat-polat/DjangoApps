@@ -4,4 +4,12 @@ section {
     background-color: whitesmoke;
     margin-bottom: 10px;
     border-radius: 1cm;
+    justify-content: center;
+}
+#title_ {
+    
+    justify-content: center;
+    color: white;
+
+
 }
