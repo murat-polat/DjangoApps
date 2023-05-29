@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .forms import RegisterForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -45,4 +45,10 @@ def profile_(request):
     return render(request, 'accounts/profile.html')
 
 def logout_(request):
+    logout(request)
+    messages.success(request, "You are logout.")
     return render(request, 'home.html')
+
+
+def dashboard_(request):
+    return render(request, 'dashboard.html')
