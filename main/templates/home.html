@@ -3,5 +3,56 @@
 
 {% block content %}
 
-<h1>Home Page</h1>
+ <div class="section"  >
+
+    <section class="hero is-primary is-medium " id="home_hero">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <a class="navbar-item">
+                  <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
+                </a>
+                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active" href="{% url 'register' %}">
+                    Register now
+                  </a>
+              
+                  
+                  <span class="navbar-item">
+                    
+                  </span>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <p class="title">
+              Home Page
+            </p>
+            <p class="subtitle">
+              Welcome
+            </p>
+          </div>
+        </div>
+      
+        
+      </section>
+
+
+ </div>
+
+
 {% endblock %}

@@ -25,7 +25,8 @@ def login_(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        return redirect(request, 'profile.html')
+        messages.success(request, f"You now logget inn.+ {user}")
+        return redirect(request, 'home.html')
        
     else:    
         return render(request, 'login.html')
@@ -36,7 +37,7 @@ def register_(request):
         if form.is_valid():
             user = form.save()
             messages.success(request, "Thanks for registrations. Now you can login the page.")
-            # return render(request, 'login.html')
+            #return redirect(request, 'login.html')
     else:
         form = RegisterForm()
     return render(request, 'registration/register.html', {"form": form } )

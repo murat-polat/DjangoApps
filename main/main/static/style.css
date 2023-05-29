@@ -15,3 +15,8 @@ section {
 
 }
 
+#home_hero {
+
+    background-image: url('images/ravnaasen.jpg');
+    background-size: cover;
+}

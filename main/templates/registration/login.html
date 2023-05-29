@@ -6,6 +6,18 @@
 
 <div class="container pt-6">
 <section class=" section  is-center">
+    <div class="container" id="form-area">    
+        {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+            {{ message }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    </div>
 <div class="container" id="form-area" >
     <h1 class="title is-center">Login Page</h1>
 <div class="section "  >
@@ -16,7 +28,8 @@
         {{form|crispy}}
        <div >
         <button class="button is-primary is-medium is-pulled-right  " type="submit" class=""><strong>Login</strong></button>
-        </div>
+        </div class='container '>
+        <div><p> If you haven't an account please register <a href="{% url 'register' %}">HERE</a></p></div>
      </div>
 </form>
 </div>
