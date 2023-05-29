@@ -3,7 +3,9 @@
 {% load static %}
 {% block content %}
 
-<section class="container section is-large is-center">
+
+<div class="container pt-6">
+<section class=" section  is-center">
 <div class="container" id="form-area" >
     <h1 class="title is-center">Login Page</h1>
 <div class="section "  >
@@ -13,11 +15,12 @@
         {% csrf_token %}
         {{form|crispy}}
        <div >
-        <button class="button is-primary is-medium is-pulled-right  " type="submit" class="">Login</button>
+        <button class="button is-primary is-medium is-pulled-right  " type="submit" class=""><strong>Login</strong></button>
         </div>
      </div>
 </form>
 </div>
 </div>
 </section>
+</div>
 {% endblock %}

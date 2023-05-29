@@ -7,10 +7,10 @@
 
 
 
- <div class="container">
-<section class="section is-large ">
+ <div class="container pt-6">
+<section class="section is-center ">
 
-    <div class="container">    
+<div class="container" id="form-area">    
     {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -22,10 +22,10 @@
 </ul>
 {% endif %}
 </div>
-<div class="container is-max-desktop">
+<div class="section">
 
     <div class="section is-center" id="title_">
-        <h1 class="title is-1 is-spaced is-pulled-center"   > Register Page</h1>
+        <h1 class="title is-center"   > Register Page</h1>
     </div>
 
 <form action="" method="post">
@@ -33,7 +33,10 @@
     <div class="field">
         {% csrf_token %}
         {{form|crispy}}
-        <button class="button is-primary" type="submit" class="">Register</button>
+        
+        <div class="container">
+            <button class="button is-primary is-medium is-pulled-right" type="submit" > <strong>Register</strong></button>
+        </div>
 
      </div>
 </form>
