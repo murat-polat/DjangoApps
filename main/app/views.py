@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate, login
 from .forms import RegisterForm
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 ### Messages ####
 # # Change the messages level to ensure the debug message is added.
 # messages.set_level(request, messages.DEBUG)
@@ -16,10 +16,10 @@ from django.contrib import messages
 
 
 
-def home(request):
+def home_(request):
     return render(request, 'home.html')
 
-def login(request):
+def login_(request):
     username = request.POST["username"]
     password = request.POST["password"]
     user = authenticate(request, username=username, password=password)
@@ -30,7 +30,7 @@ def login(request):
     else:    
         return render(request, 'login.html')
 
-def register(request):
+def register_(request):
     if request.method == 'POST':
         form = RegisterForm(request.POST)
         if form.is_valid():
@@ -41,5 +41,8 @@ def register(request):
         form = RegisterForm()
     return render(request, 'registration/register.html', {"form": form } )
 
-def profile(request):
+def profile_(request):
     return render(request, 'accounts/profile.html')
+
+def logout_(request):
+    return render(request, 'home.html')
