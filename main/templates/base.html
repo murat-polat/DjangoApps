@@ -40,16 +40,19 @@
           </div>
       
           <div class="navbar-end">
+           
             <div class="navbar-item">
+              {% if request.user.is_authenticated %}
               <div class="buttons">
-                <a class="button is-primary " href="{% url 'register' %}" >
-                  <strong>Register</strong>
+                <a class="button is-primary " href="{% url 'logout' %}" >
+                  <strong>Logout</strong>
                 </a>
+                {% else %}
                 <a class="button is-primary"  href="{% url 'login' %}">
-                  <strong> Log in </strong>
-                 
+                  <strong> Log in </strong>                 
                 </a>
               </div>
+              {% endif %}
             </div>
           </div>
         </div>
