@@ -83,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'main_db',
         'USER': 'postgres',
-        'PASSWORD': 'Password123',
+        'PASSWORD': '',
     }
 }
 
@@ -141,6 +141,14 @@ LOGIN_REDIRECT_URL = 'dashboard'
 
 LOGOUT_REDIRECT_URL = 'home'
 
+## Email SMTP settings
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = ''  ## your gmail account
+# EMAIL_HOST_PASSWORD = ''  ## your gmail password 
 
 
 JAZZMIN_SETTINGS = {
