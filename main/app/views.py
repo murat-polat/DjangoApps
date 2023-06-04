@@ -47,8 +47,9 @@ def profile_(request):
 
 def logout_(request):
     logout(request)
+    current_user = request.user()
     messages.success(request, "You are logout.")
-    return render(request, 'home.html')
+    return render(request, current_user, 'home.html')
 
 
 def dashboard_(request):
